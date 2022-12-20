@@ -1,5 +1,6 @@
-import TodoItem from "./Item/TodoItem";
 import {useState} from "react";
+import TodoItem from "./Item/TodoItem";
+import CreateTodoField from "./create-todo-field/CreateTodoField";
 
 const data = [
     {
@@ -37,6 +38,8 @@ const Home = () => {
             {todos.map(todo => (
               <TodoItem key={todo.id} todo={todo} changeTodo={changeTodo} removeTodo={removeTodo} />
             ))}
+
+            <CreateTodoField setTodos={setTodos} />
         </div>
     )
 }
